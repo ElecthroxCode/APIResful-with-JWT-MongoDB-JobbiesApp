@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -29,14 +28,29 @@ public class User {
 	private String email;
 	private String password;
 	private Boolean isEnabled;
-	Set<Role>roles = new HashSet<>();
+	Set<Role> roles = new HashSet<>();
 	Set<JobOffer> jobs = new HashSet<>();
-	
+
 	public User(UserDTO userDTO) {
 		this.fullname = userDTO.fullname();
 		this.email = userDTO.email();
 		this.password = userDTO.password();
 		this.isEnabled = true;
 	}
+
+	public void userUpdate(UserDTO userDTO) {
+		if (userDTO.fullname() != null) {
+			this.fullname = userDTO.fullname();
+		}
+
+		if (userDTO.email() != null) {
+			this.email = userDTO.email();
+		}
+
+		if (userDTO.password() != null) {
+			this.password = userDTO.password();
+		}
+	}
 	
+
 }

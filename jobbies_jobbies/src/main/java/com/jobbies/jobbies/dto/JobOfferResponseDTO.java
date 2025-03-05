@@ -3,6 +3,7 @@ package com.jobbies.jobbies.dto;
 import java.time.LocalDate;
 
 import com.jobbies.jobbies.domain.JobOffer;
+import com.jobbies.jobbies.domain.User;
 
 
 
@@ -18,5 +19,7 @@ public record JobOfferResponseDTO(
 		this(jobOffer.getId().toHexString(), jobOffer.getNameCompany(), jobOffer.getRolJob(),
 				jobOffer.getUrl(), jobOffer.getStatus(), jobOffer.getDate());
 	}
+
+	
 
 }

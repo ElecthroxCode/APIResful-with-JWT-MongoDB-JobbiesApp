@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/db_jobbies
+      # O, si necesitas autenticación:
+      # uri: mongodb://usuario:contraseña@localhost:27017/tu_base_de_datos
+      # O, con propiedades separadas:
+      # host: localhost
+      # port: 27017
+      # database: tu_base_de_datos
+      # username: usuario
+      # password: contraseña
