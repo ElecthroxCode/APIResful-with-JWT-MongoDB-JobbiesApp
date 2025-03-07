@@ -26,7 +26,7 @@ public class JobOfferController {
 		this.jobOfferService = jobOfferService;
 	}
 	
-	@GetMapping("/{idUser}/jobs")
+	@GetMapping("/jobs-all/{idUser}/pg")
 	public ResponseEntity<Page<JobOfferResponseDTO>> getJobOffersForUserPage(@PathVariable String idUser, Pageable pageable){
 		return ResponseEntity.ok(jobOfferService.getJobOffersForUserPage(idUser, pageable));
 	}

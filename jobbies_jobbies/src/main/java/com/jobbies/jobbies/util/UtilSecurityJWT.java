@@ -3,6 +3,7 @@ package com.jobbies.jobbies.util;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.util.Date;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -61,6 +62,11 @@ public class UtilSecurityJWT {
 		        .build();
 		        
 		    DecodedJWT decodedJWT = verifier.verify(token);
+		    // Verificación explícita de la expiración (opcional, pero recomendado)
+	        if (decodedJWT.getExpiresAt().before(new Date())) {
+	            System.out.println("Token expirado");
+	            return null;
+	        }
 		    return decodedJWT;
 		} catch (JWTVerificationException e){
 		    System.out.println("Token invalid: ".concat(e.getMessage()));
