@@ -67,10 +67,10 @@ public class JobOfferServiceImpl implements JobOfferService{
 		        Aggregation.unwind("jobs"),
 		        Aggregation.project()
 		                .and("jobs._id").as("_id")
-		                .and("jobs.companyName").as("companyName")
-		                .and("jobs.roleJob").as("roleJob")
+		                .and("jobs.companyName").as("nameCompany")
+		                .and("jobs.roleJob").as("rolJob")
 		                .and("jobs.status").as("status")
-		                .and("jobs.url").as("url")
+		                .and("jobs.urlOffer").as("url")
 		                .and("jobs.date").as("date"),
 		        Aggregation.skip(pageable.getOffset()),
 		        Aggregation.limit(pageable.getPageSize())

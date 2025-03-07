@@ -10,3 +10,6 @@ spring:
       # database: tu_base_de_datos
       # username: usuario
       # password: contraseña
+security:
+   jwt:
+     key-secret: "3a9f6c4b2d1e8b7a5c3d1f9e7b6a4d3c2e1f0b9a8d7c6f5e4b3a2d1c0f9e8d7"
